@@ -1,26 +1,51 @@
-# Confección de libros online interactivos usando Jupyter Book
+# Monitoreo Acústico mediante Autoencodificadores Variacionales
 
-## Resumen de la sesión 
+Este repositorio contiene mi tesis de investigación sobre el desarrollo de un sistema de monitoreo acústico utilizando Autoencodificadores Variacionales (VAE). El contenido está organizado como un JupyterBook para facilitar su lectura y navegación.
 
-En esta sesión tutorial se enseñará a instalar y utilizar la suite de herramientas [Jupyter Book](https://jupyterbook.org/intro.html) para confeccionar libros virtuales open source a partir de material docente pre-existente escrito o adaptado a los formatos Mardown, reStructuredText o Jupyter notebook. 
+## Estructura del Proyecto
 
-El resultado es un libro interactivo que se aloja en un sitio web y que combina elementos estáticos como texto enriquecido, formatos multimedia (imágenes, audio y video) y ecuaciones, con elementos interactivos como controles de interfaz de usuario, visualizaciones de datos y en general cualquier resultado de una rutina escrita en Python, R o Julia. 
+```
+.
+├── _config.yml          # Configuración del JupyterBook
+├── _toc.yml            # Tabla de contenidos
+├── intro.md            # Página de introducción
+├── capitulos/          # Contenido principal
+│   ├── introduccion.md
+│   ├── marco_teorico.md
+│   ├── metodologia.md
+│   ├── proximos1.md
+│   └── proximos2.md
+└── figuras/            # Imágenes y gráficos
+```
 
-Estas características hacen que estos libros virtuales sean particularmente útiles para la docencia en ciencias de la ingeniería, física y matemática, permitiendo transmitir nuestro material instruccional de forma asíncrona no sólo a nuestros estudiantes sino también a la comunidad general.
+## Contenido
 
-## Requisitos para los asistentes 
+El trabajo está organizado en las siguientes secciones principales:
 
-- Computador con navegador web (firefox, chrome, etc)
-- Editor de texto plano o IDE
-- Manejador de ambientes [conda](https://docs.conda.io/en/latest/)
-- (opcional) Cliente [git](https://git-scm.com/) 
+1. **Introducción**: Contextualización y objetivos de la investigación
+2. **Marco Teórico**: Fundamentos de VAE y procesamiento de señales acústicas
+3. **Metodología**: Diseño e implementación del sistema
+4. **Resultados**: Evaluación y análisis del desempeño
+5. **Conclusiones**: Hallazgos y trabajo futuro
 
-## Ejemplos 
+## Construcción del Libro
 
-- [Libro INFO147 Computación científica con Python](https://magister-informatica-uach.github.io/INFO147/cover.html)
-- [Libro INFO239 Comunicaciones](https://phuijse.github.io/UACH-INFO185/README.html)
-- [Libro INFO183 Análisis de sistemas lineales](https://phuijse.github.io/UACH-INFO183/README.html)
-- [Galería de Jupyter books de toda índole](https://executablebooks.org/en/latest/gallery.html)
+Para construir el libro localmente:
 
+```bash
+# Instalar jupyter-book
+pip install jupyter-book
+
+# Construir el libro
+jupyter-book build .
+```
+
+El libro construido estará disponible en `_build/html/`.
+
+## Autor
+
+José Nicolás Aillapi Gómez
+Universidad Austral de Chile
+INFO236 - Tesis
 
 
