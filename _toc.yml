@@ -1,21 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: README
+root: intro
 parts:
-  - caption: Instalación y uso de jupyter book
-    numbered: true
+  - caption: Monitoreo Acústico mediante VAE
     chapters:
-    - file: contenidos/unidad1/clase1
-    - file: contenidos/unidad1/clase2
-    - file: contenidos/unidad1/clase3
-    - file: contenidos/unidad1/appendix
-  - caption: Escribiendo los contenidos del libro
-    numbered: true
-    chapters:
-    - file: contenidos/unidad2/clase4
-    - file: contenidos/unidad2/clase5
-    - file: contenidos/unidad2/clase6
-  - caption: Subiendo el libro a internet
-    numbered: true
-    chapters:
-    - file: contenidos/unidad3/clase7
+    - file: capitulos/introduccion
+    - file: capitulos/marco_teorico
+    - file: capitulos/metodologia
+    - file: capitulos/resultados
+    - file: capitulos/conclusiones

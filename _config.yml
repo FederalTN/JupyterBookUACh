@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Mi primer jupyter-book
-author: Pablo Huijse
+title: Tesis - Monitoreo Acústico y Análisis de Dialectos
+author: Josè Aillapi
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
