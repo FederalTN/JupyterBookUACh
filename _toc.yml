@@ -9,5 +9,6 @@ parts:
     - file: capitulos/introduccion
     - file: capitulos/marco_teorico
     - file: capitulos/metodologia
+    - file: jupyter_notebook/spectrogram_ja_vp_sent
     - file: capitulos/resultados
     - file: capitulos/conclusiones
