@@ -4,6 +4,7 @@
 title: Tesis Monitoreo Acústico y Analisis de Sonidos Naturales
 author: Josè Aillapi
 logo: logo.png
+copyright: "2025" # Copyright year to be displayed in the book footer
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -34,3 +35,4 @@ sphinx:
   config:
     language: es
     bibtex_reference_style: author_year
+
