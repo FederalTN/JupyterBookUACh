@@ -54,9 +54,6 @@ Registros de vocalizaciones de anfibios en Chile
 
 El monitoreo acústico es una técnica que permite recopilar información sobre el entorno a través del análisis de señales sonoras. En el contexto de esta investigación, nos enfocamos en el desarrollo de sistemas automatizados para el procesamiento y análisis de estas señales.
 
-```{audio} audios/soundscape_workshop.wav
-:controls: true
-:loop: false
 
 ## Autoencodificadores Variacionales (VAE)
 

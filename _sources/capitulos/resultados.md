@@ -10,7 +10,7 @@ Replicacion de modelo VAE con base de datos de aves
 
 Visualizacion en UMAP del espacio latente por dispositivo de hardware
 
-```{figure} images/2_chorus_before_recorder_umap.png
+```{figure} images/ORIGINAL/2_chorus_before_recorder_umap.png
 
 :name: vae2
 :align: center
@@ -25,7 +25,7 @@ Formula de normalizacion usada por Gibb para afrontar este problema
 
 Umap normalizado con hardware mitigado
 
-```{figure} images/7_chorus_after_recorder_umap.png
+```{figure} images/ORIGINAL/7_chorus_after_recorder_umap.png
 
 :name: vae3
 :align: center
