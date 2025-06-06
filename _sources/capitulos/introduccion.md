@@ -50,14 +50,22 @@ Registros de vocalizaciones de aves en Chile
 
 Registros de vocalizaciones de anfibios en Chile
 ```
+## Monitoreo Acústico
+
+El monitoreo acústico es una técnica que permite recopilar información sobre el entorno a través del análisis de señales sonoras. En el contexto de esta investigación, nos enfocamos en el desarrollo de sistemas automatizados para el procesamiento y análisis de estas señales.
+
+```{audio} audios/soundscape_workshop.wav
+:controls: true
+:loop: false
+
+## Autoencodificadores Variacionales (VAE)
+
+Los Autoencodificadores Variacionales son una clase de modelos generativos que combinan redes neuronales con inferencia variacional. A diferencia de los autoencodificadores tradicionales, los VAE aprenden una distribución probabilística del espacio latente.
 
 ### Innovación Metodológica
 
 Inspirados por investigaciones recientes, particularmente el trabajo de Kieran Gibb publicado en Ecological Informatics, proponemos adaptar y aplicar autoencodificadores variacionales convolucionales (VAE) al estudio de nuestras especies locales. Esta metodología, que ha demostrado resultados prometedores en el estudio de vocalizaciones de aves, podría revolucionar nuestra capacidad para monitorear y comprender las poblaciones de anfibios en los humedales de la región.
 
-### Desafíos Técnicos
-
-Los paisajes sonoros naturales presentan desafíos únicos para el análisis automatizado. Las vocalizaciones de anfibios frecuentemente se encuentran inmersas en una matriz compleja de sonidos ambientales, desde la lluvia hasta el ruido urbano. La magnitud de datos generados en proyectos de monitoreo acústico —que pueden alcanzar terabytes por temporada— hace imperativa la implementación de soluciones automatizadas que no solo sean eficientes, sino también interpretables.
 
 ```{note}
 Este capítulo introduce el trabajo de investigación sobre monitoreo acústico mediante VAE, estableciendo sus objetivos y alcance.

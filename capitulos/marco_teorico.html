@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/marco_teorico';</script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
-    <link rel="next" title="Objetivos" href="objetivos.html" />
-    <link rel="prev" title="Introducción" href="introduccion.html" />
+    <link rel="next" title="Análisis en el dominio del tiempo" href="../jupyter_notebook/spectrogram_ja_vp_sent.html" />
+    <link rel="prev" title="Metodología general" href="metodologia.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -184,9 +184,9 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Monitoreo Acústico mediante VAE</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Marco Teórico</a></li>
 <li class="toctree-l1"><a class="reference internal" href="objetivos.html">Objetivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metodologia.html">Metodología general</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Marco Teórico</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter_notebook/spectrogram_ja_vp_sent.html">Análisis en el dominio del tiempo</a></li>
 
 
@@ -338,16 +338,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-acustico">Monitoreo Acústico</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencodificadores-variacionales-vae">Autoencodificadores Variacionales (VAE)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-del-vae">Arquitectura del VAE</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-senales-acusticas">Procesamiento de Señales Acústicas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-de-senales">Representación de Señales</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-en-monitoreo-acustico">Aplicaciones en Monitoreo Acústico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-del-vae">Arquitectura del VAE</a></li>
 </ul>
             </nav>
         </div>
@@ -361,15 +352,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="marco-teorico">
 <h1>Marco Teórico<a class="headerlink" href="#marco-teorico" title="Link to this heading">#</a></h1>
-<section id="monitoreo-acustico">
-<h2>Monitoreo Acústico<a class="headerlink" href="#monitoreo-acustico" title="Link to this heading">#</a></h2>
-<p>El monitoreo acústico es una técnica que permite recopilar información sobre el entorno a través del análisis de señales sonoras. En el contexto de esta investigación, nos enfocamos en el desarrollo de sistemas automatizados para el procesamiento y análisis de estas señales.</p>
-</section>
-<section id="autoencodificadores-variacionales-vae">
-<h2>Autoencodificadores Variacionales (VAE)<a class="headerlink" href="#autoencodificadores-variacionales-vae" title="Link to this heading">#</a></h2>
-<p>Los Autoencodificadores Variacionales son una clase de modelos generativos que combinan redes neuronales con inferencia variacional. A diferencia de los autoencodificadores tradicionales, los VAE aprenden una distribución probabilística del espacio latente.</p>
 <section id="arquitectura-del-vae">
-<h3>Arquitectura del VAE<a class="headerlink" href="#arquitectura-del-vae" title="Link to this heading">#</a></h3>
+<h2>Arquitectura del VAE<a class="headerlink" href="#arquitectura-del-vae" title="Link to this heading">#</a></h2>
 <p>La arquitectura básica de un VAE consiste en:</p>
 <ol class="arabic simple">
 <li><p><strong>Encoder (q_φ(z|x))</strong>:</p>
@@ -390,42 +374,10 @@ document.write(`
 </ul>
 </li>
 </ol>
-</section>
-</section>
-<section id="procesamiento-de-senales-acusticas">
-<h2>Procesamiento de Señales Acústicas<a class="headerlink" href="#procesamiento-de-senales-acusticas" title="Link to this heading">#</a></h2>
-<section id="representacion-de-senales">
-<h3>Representación de Señales<a class="headerlink" href="#representacion-de-senales" title="Link to this heading">#</a></h3>
-<p>Para el procesamiento de señales acústicas, utilizamos:</p>
-<ol class="arabic simple">
-<li><p><strong>Espectrogramas</strong>:</p>
-<ul class="simple">
-<li><p>Representación tiempo-frecuencia de la señal</p></li>
-<li><p>Permite visualizar la evolución temporal del contenido frecuencial</p></li>
-</ul>
-</li>
-<li><p><strong>Transformada de Fourier de Tiempo Corto (STFT)</strong>:</p>
-<ul class="simple">
-<li><p>Análisis localizado de frecuencias</p></li>
-<li><p>Base para la generación de espectrogramas</p></li>
-</ul>
-</li>
-</ol>
-</section>
-</section>
-<section id="aplicaciones-en-monitoreo-acustico">
-<h2>Aplicaciones en Monitoreo Acústico<a class="headerlink" href="#aplicaciones-en-monitoreo-acustico" title="Link to this heading">#</a></h2>
-<p>El monitoreo acústico automatizado tiene diversas aplicaciones:</p>
-<ul class="simple">
-<li><p>Detección de especies</p></li>
-<li><p>Análisis de biodiversidad</p></li>
-<li><p>Monitoreo ambiental</p></li>
-<li><p>Identificación de patrones acústicos</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Este capitulo se basa directamente en el contenido de mi tesis de investigación sobre monitoreo acústico mediante VAE.</p>
-</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/VaeGraphicalAbstract.jpg"><img alt="../_images/VaeGraphicalAbstract.jpg" src="../_images/VaeGraphicalAbstract.jpg" style="width: 90%;" />
+</a>
+</figure>
 </section>
 </section>
 
@@ -460,20 +412,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduccion.html"
+       href="metodologia.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Introducción</p>
+        <p class="prev-next-title">Metodología general</p>
       </div>
     </a>
     <a class="right-next"
-       href="objetivos.html"
+       href="../jupyter_notebook/spectrogram_ja_vp_sent.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Objetivos</p>
+        <p class="prev-next-title">Análisis en el dominio del tiempo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -493,16 +445,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-acustico">Monitoreo Acústico</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencodificadores-variacionales-vae">Autoencodificadores Variacionales (VAE)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-del-vae">Arquitectura del VAE</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-senales-acusticas">Procesamiento de Señales Acústicas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-de-senales">Representación de Señales</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-en-monitoreo-acustico">Aplicaciones en Monitoreo Acústico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-del-vae">Arquitectura del VAE</a></li>
 </ul>
   </nav></div>
 

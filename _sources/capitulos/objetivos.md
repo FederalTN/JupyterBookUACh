@@ -21,3 +21,8 @@ Desarrollar y evaluar un modelo de VAE entrenado con datos locales que represent
 ## Hipótesis
 
 Un VAE entrenado con espectrogramas Mel de anfibios generará un espacio latente donde muestras de la misma especie se agrupan de forma densa y separada de otras especies, incluso bajo condiciones de ruido de fondo variado.
+
+
+### Desafíos Técnicos
+
+Los paisajes sonoros naturales presentan desafíos únicos para el análisis automatizado. Las vocalizaciones de anfibios frecuentemente se encuentran inmersas en una matriz compleja de sonidos ambientales, desde la lluvia hasta el ruido urbano. La magnitud de datos generados en proyectos de monitoreo acústico —que pueden alcanzar terabytes por temporada— hace imperativa la implementación de soluciones automatizadas que no solo sean eficientes, sino también interpretables.

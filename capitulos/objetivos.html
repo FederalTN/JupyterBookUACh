@@ -63,7 +63,7 @@
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
     <link rel="next" title="Metodología general" href="metodologia.html" />
-    <link rel="prev" title="Marco Teórico" href="marco_teorico.html" />
+    <link rel="prev" title="Introducción" href="introduccion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -184,9 +184,9 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Monitoreo Acústico mediante VAE</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
-<li class="toctree-l1"><a class="reference internal" href="marco_teorico.html">Marco Teórico</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Objetivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metodologia.html">Metodología general</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marco_teorico.html">Marco Teórico</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter_notebook/spectrogram_ja_vp_sent.html">Análisis en el dominio del tiempo</a></li>
 
 
@@ -341,7 +341,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-general">Objetivo General</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-especificos">Objetivos Específicos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-de-investigacion">Pregunta de Investigación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis">Hipótesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis">Hipótesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desafios-tecnicos">Desafíos Técnicos</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -375,6 +378,10 @@ document.write(`
 <section id="hipotesis">
 <h2>Hipótesis<a class="headerlink" href="#hipotesis" title="Link to this heading">#</a></h2>
 <p>Un VAE entrenado con espectrogramas Mel de anfibios generará un espacio latente donde muestras de la misma especie se agrupan de forma densa y separada de otras especies, incluso bajo condiciones de ruido de fondo variado.</p>
+<section id="desafios-tecnicos">
+<h3>Desafíos Técnicos<a class="headerlink" href="#desafios-tecnicos" title="Link to this heading">#</a></h3>
+<p>Los paisajes sonoros naturales presentan desafíos únicos para el análisis automatizado. Las vocalizaciones de anfibios frecuentemente se encuentran inmersas en una matriz compleja de sonidos ambientales, desde la lluvia hasta el ruido urbano. La magnitud de datos generados en proyectos de monitoreo acústico —que pueden alcanzar terabytes por temporada— hace imperativa la implementación de soluciones automatizadas que no solo sean eficientes, sino también interpretables.</p>
+</section>
 </section>
 </section>
 
@@ -409,12 +416,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="marco_teorico.html"
+       href="introduccion.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Marco Teórico</p>
+        <p class="prev-next-title">Introducción</p>
       </div>
     </a>
     <a class="right-next"
@@ -445,7 +452,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-general">Objetivo General</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-especificos">Objetivos Específicos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-de-investigacion">Pregunta de Investigación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis">Hipótesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis">Hipótesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desafios-tecnicos">Desafíos Técnicos</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

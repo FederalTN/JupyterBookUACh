@@ -1,12 +1,6 @@
 # Marco Teórico
 
-## Monitoreo Acústico
 
-El monitoreo acústico es una técnica que permite recopilar información sobre el entorno a través del análisis de señales sonoras. En el contexto de esta investigación, nos enfocamos en el desarrollo de sistemas automatizados para el procesamiento y análisis de estas señales.
-
-## Autoencodificadores Variacionales (VAE)
-
-Los Autoencodificadores Variacionales son una clase de modelos generativos que combinan redes neuronales con inferencia variacional. A diferencia de los autoencodificadores tradicionales, los VAE aprenden una distribución probabilística del espacio latente.
 
 ### Arquitectura del VAE
 
@@ -22,6 +16,11 @@ La arquitectura básica de un VAE consiste en:
 
 3. **Decoder (p_θ(x|z))**:
    - Reconstruye los datos originales a partir de las muestras del espacio latente
+
+```{figure} images/VaeGraphicalAbstract.jpg
+:name: vae
+:align: center
+:width: 90%
 
 ## Procesamiento de Señales Acústicas
 
