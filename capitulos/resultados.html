@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Tesis Monitoreo Acústico y Analisis de Sonidos Naturales</title>
+    <title>Resultados &#8212; Tesis Monitoreo Acústico y Analisis de Sonidos Naturales</title>
   
   
   
@@ -59,8 +59,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/resultados';</script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
@@ -183,7 +181,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Monitoreo Acústico mediante VAE</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
 <li class="toctree-l1"><a class="reference internal" href="objetivos.html">Objetivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metodologia.html">Metodología general</a></li>
@@ -191,6 +189,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../jupyter_notebook/spectrogram_ja_vp_sent.html">Análisis en el dominio del tiempo</a></li>
 
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Resultados</a></li>
 </ul>
 
     </div>
@@ -316,9 +315,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -329,19 +326,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Resultados</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenido </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -351,30 +340,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Replicacion de modelo VAE con base de datos de aves</p>
-<figure class="align-center" id="vae">
+  <section class="tex2jax_ignore mathjax_ignore" id="resultados">
+<h1>Resultados<a class="headerlink" href="#resultados" title="Link to this heading">#</a></h1>
+<p>Replicacion de modelo VAE con base de datos de aves</p>
+<figure class="align-center" id="vae1">
 <a class="reference internal image-reference" href="../_images/accuracy.png"><img alt="../_images/accuracy.png" src="../_images/accuracy.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figura 7 </span><span class="caption-text">Visualizacion en UMAP del espacio latente por dispositivo de hardware</span><a class="headerlink" href="#vae" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 7 </span><span class="caption-text">Visualizacion en UMAP del espacio latente por dispositivo de hardware</span><a class="headerlink" href="#vae1" title="Link to this image">#</a></p>
 <div class="legend">
 <figure class="align-default" id="id1">
 <img alt="capitulos/images/2_chorus_before_recorder_umap.png" src="capitulos/images/2_chorus_before_recorder_umap.png" />
 <figcaption>
-<p><span class="caption-number">Figura 8 </span><span class="caption-text">:name: vae
+<p><span class="caption-number">Figura 8 </span><span class="caption-text">:name: vae2
 :align: center
 :width: 90%</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 <div class="legend">
 <p>Formula de normalizacion usada por Gibb para afrontar este problema</p>
-<div class="math notranslate nohighlight">
-\[
-\mu_{it}^{SM3} = \mu_{it}^{SM2} - \bar{\mu}^{SM2} + \bar{\mu}^{SM3}
-\]</div>
+<p>\mu_{it}^{SM3} = \mu_{it}^{SM2} - \bar{\mu}^{SM2} + \bar{\mu}^{SM3}</p>
 <p>Umap normalizado con hardware mitigado</p>
 <figure class="align-default" id="id2">
 <img alt="capitulos/images/7_chorus_after_recorder_umap.png" src="capitulos/images/7_chorus_after_recorder_umap.png" />
 <figcaption>
-<p><span class="caption-number">Figura 9 </span><span class="caption-text">:name: vae
+<p><span class="caption-number">Figura 9 </span><span class="caption-text">:name: vae3
 :align: center
 :width: 90%</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 <div class="legend">
@@ -388,6 +376,7 @@ document.write(`
 </div>
 </figcaption>
 </figure>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -434,21 +423,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenido
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
