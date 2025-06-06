@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Metodología &#8212; Tesis Monitoreo Acústico y Analisis de Sonidos Naturales</title>
+    <title>Metodología general &#8212; Tesis Monitoreo Acústico y Analisis de Sonidos Naturales</title>
   
   
   
@@ -185,7 +185,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
 <li class="toctree-l1"><a class="reference internal" href="marco_teorico.html">Marco Teórico</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metodología</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metodología general</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter_notebook/spectrogram_ja_vp_sent.html">Análisis en el dominio del tiempo</a></li>
 
 
@@ -327,7 +327,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Metodología</h1>
+    <h1>Metodología general</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -337,18 +337,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-del-sistema">Diseño del Sistema</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-del-vae">Arquitectura del VAE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-y-replicacion-del-modelo-base">1. Revisión y replicación del modelo base</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-y-arquitectura-vae-de-referencia">Código y arquitectura VAE de referencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-de-datos-de-aves">Base de datos de aves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-y-entrenamiento-inicial">Configuración y entrenamiento inicial</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion">Implementación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-del-modelo">Entrenamiento del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migracion-a-la-base-de-datos-de-anfibios">2. Migración a la base de datos de anfibios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-de-datos-propia">Base de datos propia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-desde-cero">Entrenamiento desde cero</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer Learning</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion">Evaluación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-de-evaluacion">Métricas de Evaluación</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolo-de-pruebas">Protocolo de Pruebas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-otras-redes-neuronales">3. Comparación con otras redes neuronales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-cnn-supervisados">Modelos CNN supervisados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-del-vae">Evaluación del VAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretabilidad">Interpretabilidad</a></li>
 </ul>
 </li>
 </ul>
@@ -362,79 +366,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="metodologia">
-<h1>Metodología<a class="headerlink" href="#metodologia" title="Link to this heading">#</a></h1>
-<section id="diseno-del-sistema">
-<h2>Diseño del Sistema<a class="headerlink" href="#diseno-del-sistema" title="Link to this heading">#</a></h2>
-<section id="arquitectura-del-vae">
-<h3>Arquitectura del VAE<a class="headerlink" href="#arquitectura-del-vae" title="Link to this heading">#</a></h3>
-<p>La arquitectura del sistema se compone de:</p>
-<ol class="arabic simple">
-<li><p><strong>Preprocesamiento de Señales</strong></p>
-<ul class="simple">
-<li><p>Conversión a espectrogramas</p></li>
-<li><p>Normalización de datos</p></li>
-<li><p>Segmentación de señales</p></li>
-</ul>
-</li>
-<li><p><strong>Estructura del Encoder</strong></p>
-<ul class="simple">
-<li><p>Capas convolucionales</p></li>
-<li><p>Capas densas</p></li>
-<li><p>Capa de muestreo del espacio latente</p></li>
-</ul>
-</li>
-<li><p><strong>Estructura del Decoder</strong></p>
-<ul class="simple">
-<li><p>Capas deconvolucionales</p></li>
-<li><p>Capas densas</p></li>
-<li><p>Capa de reconstrucción</p></li>
-</ul>
-</li>
-</ol>
-</section>
-</section>
-<section id="implementacion">
-<h2>Implementación<a class="headerlink" href="#implementacion" title="Link to this heading">#</a></h2>
-<section id="preprocesamiento-de-datos">
-<h3>Preprocesamiento de Datos<a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">preprocess_audio</span><span class="p">(</span><span class="n">audio_file</span><span class="p">):</span>
-    <span class="c1"># Código de ejemplo para el preprocesamiento</span>
-    <span class="n">signal</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">audio_file</span><span class="p">)</span>
-    <span class="n">spectrogram</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">melspectrogram</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">signal</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">spectrogram</span>
-</pre></div>
-</div>
-</section>
-<section id="entrenamiento-del-modelo">
-<h3>Entrenamiento del Modelo<a class="headerlink" href="#entrenamiento-del-modelo" title="Link to this heading">#</a></h3>
-<p>El proceso de entrenamiento incluye:</p>
-<ol class="arabic simple">
-<li><p>Carga y preprocesamiento de datos</p></li>
-<li><p>Definición de hiperparámetros</p></li>
-<li><p>Entrenamiento del VAE</p></li>
-<li><p>Validación del modelo</p></li>
-</ol>
-</section>
-</section>
-<section id="evaluacion">
-<h2>Evaluación<a class="headerlink" href="#evaluacion" title="Link to this heading">#</a></h2>
-<section id="metricas-de-evaluacion">
-<h3>Métricas de Evaluación<a class="headerlink" href="#metricas-de-evaluacion" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Error de reconstrucción</p></li>
-<li><p>Divergencia KL</p></li>
-<li><p>Precisión en la detección</p></li>
-<li><p>F1-score</p></li>
-</ul>
-</section>
-<section id="protocolo-de-pruebas">
-<h3>Protocolo de Pruebas<a class="headerlink" href="#protocolo-de-pruebas" title="Link to this heading">#</a></h3>
-<p>Descripción detallada del protocolo de pruebas utilizado para evaluar el sistema.</p>
-<div class="admonition note">
+  <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Este capitulo se basa directamente en el contenido de mi tesis de investigación sobre monitoreo acústico mediante VAE.</p>
 </div>
+<section class="tex2jax_ignore mathjax_ignore" id="metodologia-general">
+<h1>Metodología general<a class="headerlink" href="#metodologia-general" title="Link to this heading">#</a></h1>
+<p>Ahondemos ahora, como lograremos esto:</p>
+<p>La metodología tiene tres etapas:</p>
+<section id="revision-y-replicacion-del-modelo-base">
+<h2>1. Revisión y replicación del modelo base<a class="headerlink" href="#revision-y-replicacion-del-modelo-base" title="Link to this heading">#</a></h2>
+<section id="codigo-y-arquitectura-vae-de-referencia">
+<h3>Código y arquitectura VAE de referencia<a class="headerlink" href="#codigo-y-arquitectura-vae-de-referencia" title="Link to this heading">#</a></h3>
+<p>Se toma como base el modelo propuesto por Gibb et al. (2024), que utiliza una arquitectura encoder–decoder convolucional profunda para aprender representaciones latentes de espectrogramas Mel.</p>
+</section>
+<section id="base-de-datos-de-aves">
+<h3>Base de datos de aves<a class="headerlink" href="#base-de-datos-de-aves" title="Link to this heading">#</a></h3>
+<p>Se emplean las grabaciones provistas en el trabajo original (4725 fragmentos de 1 minuto provenientes de sitios en el Reino Unido y Ecuador) con el fin de mantener la fidelidad al enfoque planteado por los autores.</p>
+</section>
+<section id="configuracion-y-entrenamiento-inicial">
+<h3>Configuración y entrenamiento inicial<a class="headerlink" href="#configuracion-y-entrenamiento-inicial" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Preprocesamiento del audio (conversión a espectrogramas log-Mel y normalización).</p></li>
+<li><p>Entrenamiento del VAE mediante mini-batches, maximizando la evidencia ELBO (término de reconstrucción + término KL).</p></li>
+<li><p>Evaluación de la calidad de reconstrucción y la capacidad de diferenciación de hábitats (o especies) mediante técnicas de proyección (UMAP) y clasificadores sencillos (e.g., regresión logística).</p></li>
+</ul>
+</section>
+</section>
+<section id="migracion-a-la-base-de-datos-de-anfibios">
+<h2>2. Migración a la base de datos de anfibios<a class="headerlink" href="#migracion-a-la-base-de-datos-de-anfibios" title="Link to this heading">#</a></h2>
+<section id="base-de-datos-propia">
+<h3>Base de datos propia<a class="headerlink" href="#base-de-datos-propia" title="Link to this heading">#</a></h3>
+<p>Se dispone de grabaciones de anfibios cuidadosamente etiquetadas, obtenidas en humedales urbano-naturales de la región de Los Ríos. Estas incluyen especies como:</p>
+<ul class="simple">
+<li><p>Batrachyla leptopus</p></li>
+<li><p>Batrachyla taeniata</p></li>
+<li><p>Caliptocephalella gayi</p></li>
+<li><p>Pleurodema thaul</p></li>
+<li><p>Entre otras</p></li>
+</ul>
+</section>
+<section id="entrenamiento-desde-cero">
+<h3>Entrenamiento desde cero<a class="headerlink" href="#entrenamiento-desde-cero" title="Link to this heading">#</a></h3>
+<p>El mismo modelo VAE se entrena con estas grabaciones, ajustando hiperparámetros (por ejemplo, rangos de frecuencia) para adaptarse a las características acústicas de los llamados de anfibios.</p>
+</section>
+<section id="transfer-learning">
+<h3>Transfer Learning<a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h3>
+<p>Paralelamente, se evalúa la posibilidad de partir del modelo entrenado con datos de aves (es decir, utilizando los pesos del encoder y decoder) y realizar un ajuste fino (fine-tuning) con la nueva base de datos de anfibios, con el objetivo de mejorar la eficiencia y la capacidad de generalización.</p>
+</section>
+</section>
+<section id="comparacion-con-otras-redes-neuronales">
+<h2>3. Comparación con otras redes neuronales<a class="headerlink" href="#comparacion-con-otras-redes-neuronales" title="Link to this heading">#</a></h2>
+<section id="modelos-cnn-supervisados">
+<h3>Modelos CNN supervisados<a class="headerlink" href="#modelos-cnn-supervisados" title="Link to this heading">#</a></h3>
+<p>Como línea base, se consideran arquitecturas clásicas de clasificación supervisada (redes convolucionales especializadas), entrenadas directamente con las etiquetas de especie de la base de datos de anfibios.</p>
+</section>
+<section id="evaluacion-del-vae">
+<h3>Evaluación del VAE<a class="headerlink" href="#evaluacion-del-vae" title="Link to this heading">#</a></h3>
+<p>Aunque el VAE es un modelo generativo, se pueden extraer sus vectores latentes y utilizarlos como entrada para clasificadores simples (como SVM o regresión logística), evaluando su exactitud y F1-score en la identificación de especies.</p>
+</section>
+<section id="interpretabilidad">
+<h3>Interpretabilidad<a class="headerlink" href="#interpretabilidad" title="Link to this heading">#</a></h3>
+<p>Se analiza la interpretabilidad de las representaciones latentes del VAE en comparación con las de modelos puramente supervisados. El objetivo es determinar la utilidad de los espacios latentes para identificar claramente las diferencias entre especies y detectar eventos poco frecuentes.</p>
 </section>
 </section>
 </section>
@@ -503,18 +496,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-del-sistema">Diseño del Sistema</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-del-vae">Arquitectura del VAE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-y-replicacion-del-modelo-base">1. Revisión y replicación del modelo base</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-y-arquitectura-vae-de-referencia">Código y arquitectura VAE de referencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-de-datos-de-aves">Base de datos de aves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-y-entrenamiento-inicial">Configuración y entrenamiento inicial</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion">Implementación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-del-modelo">Entrenamiento del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migracion-a-la-base-de-datos-de-anfibios">2. Migración a la base de datos de anfibios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-de-datos-propia">Base de datos propia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-desde-cero">Entrenamiento desde cero</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer Learning</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion">Evaluación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-de-evaluacion">Métricas de Evaluación</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolo-de-pruebas">Protocolo de Pruebas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-otras-redes-neuronales">3. Comparación con otras redes neuronales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-cnn-supervisados">Modelos CNN supervisados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-del-vae">Evaluación del VAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretabilidad">Interpretabilidad</a></li>
 </ul>
 </li>
 </ul>

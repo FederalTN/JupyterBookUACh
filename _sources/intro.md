@@ -11,6 +11,16 @@ El contenido está organizado en las siguientes secciones principales:
 3. **Resultados**: Evaluación y análisis del desempeño
 4. **Conclusiones**: Hallazgos y trabajo futuro
 
+Esta investigación nace de la intersección entre la informática, acustica y la ecología, trabajando en conjunto con el Laboratorio de Audio y Minería de Datos (AuMiLab). El proyecto busca aplicar los conocimientos de ingeniería de software y aprendizaje profundo en un contexto multidisciplinario.
+
+```{figure} aumilab.png
+:name: aumilab-logo
+:align: center
+
+Logo del Laboratorio de Audio y Minería de Datos (AuMiLab)
+```
+
+
 ```{note}
 Este libro está basado en mi trabajo de tesis "Monitoreo Acústico mediante Autoencodificadores Variacionales" y refleja el estado actual de la investigación.
 ``` 
